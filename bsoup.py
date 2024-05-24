@@ -50,7 +50,6 @@ def parse_html():
             print('None was returned')
             return (None)
     except:
-        print('There is something wrong somewhere')
         return(None)
 
 def pandalize():
@@ -63,15 +62,12 @@ def pandalize():
                 'POINTS':points
             }
             df = pd.DataFrame(data)
-            df_points = pd.Series(points)
             df.to_csv('data/df_bsoup.csv')
-            #df_points.to_csv('data/df_points.csv')
             return(df)
         else:
             print('Something went wrong while pandalizing data')
             return (None) #type: ignore
     except:
-        print('Something went wrong while pandalizing...')
         return None #type:ignore
     
 if __name__ == '__main__':
